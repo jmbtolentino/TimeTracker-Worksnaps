@@ -4,7 +4,7 @@
 Time Tracker Helper (Worksnaps) is a lightweight C# application designed to simplify the process of tracking total worked hours and determining checkout times for employees using Worksnaps. Instead of navigating the Worksnaps website and waiting for pages to load, users can quickly access their work details with a simple shortcut.
 
 ## Key features
-- **Quick Access:** Press Ctrl + Alt + T to bring up a form showing:
+- **Quick Access:** Press `Ctrl + Alt + T` to bring up a form showing:
     - Total worked hours (excluding idle time).
     - The suggested checkout time based on the work schedule.
 - **Automated Updates:** The application automatically retrieves data from the Worksnaps API every 5 minutes, ensuring close to accurate and up-to-date information.
