@@ -68,7 +68,7 @@ namespace TimeTracker_Worksnaps
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Hide();
+            Opacity = 0;
         }
     }
 }
