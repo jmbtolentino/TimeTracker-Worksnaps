@@ -14,6 +14,12 @@ namespace TimeTracker_Worksnaps
             return epoch;
         }
 
+        public static DateTime ToLocalTime(this long timestamp)
+        {
+            DateTime startDatetime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            return startDatetime.AddSeconds(timestamp).ToLocalTime();
+        }
+
         public static DateTime RoundUpToNext10Minutes(this DateTime time)
         {
             return time.AddMinutes(

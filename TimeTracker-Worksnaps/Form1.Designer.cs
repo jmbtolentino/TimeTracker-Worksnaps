@@ -34,6 +34,10 @@
             lblExpectedOut = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             button1 = new Button();
+            lblLastCapture = new Label();
+            label4 = new Label();
+            lblLastFetched = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -50,7 +54,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(14, 35);
+            label2.Location = new Point(21, 35);
             label2.Name = "label2";
             label2.Size = new Size(101, 21);
             label2.TabIndex = 1;
@@ -60,7 +64,7 @@
             // 
             lblTotalTime.AutoSize = true;
             lblTotalTime.Font = new Font("Segoe UI", 12F);
-            lblTotalTime.Location = new Point(150, 7);
+            lblTotalTime.Location = new Point(128, 7);
             lblTotalTime.Name = "lblTotalTime";
             lblTotalTime.Size = new Size(116, 21);
             lblTotalTime.TabIndex = 2;
@@ -70,7 +74,7 @@
             // 
             lblExpectedOut.AutoSize = true;
             lblExpectedOut.Font = new Font("Segoe UI", 12F);
-            lblExpectedOut.Location = new Point(150, 35);
+            lblExpectedOut.Location = new Point(128, 35);
             lblExpectedOut.Name = "lblExpectedOut";
             lblExpectedOut.Size = new Size(28, 21);
             lblExpectedOut.TabIndex = 3;
@@ -78,26 +82,70 @@
             // 
             // backgroundWorker1
             // 
-            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
             // 
             // button1
             // 
             button1.BackColor = Color.IndianRed;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(289, -1);
+            button1.Location = new Point(262, -1);
             button1.Name = "button1";
             button1.Size = new Size(35, 23);
             button1.TabIndex = 4;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += Button1_Click;
+            // 
+            // lblLastCapture
+            // 
+            lblLastCapture.AutoSize = true;
+            lblLastCapture.Font = new Font("Segoe UI", 12F);
+            lblLastCapture.Location = new Point(128, 63);
+            lblLastCapture.Name = "lblLastCapture";
+            lblLastCapture.Size = new Size(28, 21);
+            lblLastCapture.TabIndex = 6;
+            lblLastCapture.Text = "---";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(22, 63);
+            label4.Name = "label4";
+            label4.Size = new Size(100, 21);
+            label4.TabIndex = 5;
+            label4.Text = "Last Capture:";
+            // 
+            // lblLastFetched
+            // 
+            lblLastFetched.AutoSize = true;
+            lblLastFetched.Font = new Font("Segoe UI", 12F);
+            lblLastFetched.Location = new Point(129, 91);
+            lblLastFetched.Name = "lblLastFetched";
+            lblLastFetched.Size = new Size(28, 21);
+            lblLastFetched.TabIndex = 10;
+            lblLastFetched.Text = "---";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.Location = new Point(23, 91);
+            label5.Name = "label5";
+            label5.Size = new Size(99, 21);
+            label5.TabIndex = 9;
+            label5.Text = "Last Fetched:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(323, 65);
+            ClientSize = new Size(296, 125);
+            Controls.Add(lblLastFetched);
+            Controls.Add(label5);
+            Controls.Add(lblLastCapture);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(lblExpectedOut);
             Controls.Add(lblTotalTime);
@@ -109,6 +157,7 @@
             StartPosition = FormStartPosition.Manual;
             Text = "Form1";
             TopMost = true;
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -122,5 +171,9 @@
         private Label lblExpectedOut;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button button1;
+        private Label lblLastCapture;
+        private Label label4;
+        private Label lblLastFetched;
+        private Label label5;
     }
 }

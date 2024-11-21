@@ -9,5 +9,6 @@ namespace TimeTracker_Worksnaps
     internal class TimeEntry
     {
         public int ActivityLevel { get; set; }
+        public long LoggedTimestamp { get; set; }
     }
 }
